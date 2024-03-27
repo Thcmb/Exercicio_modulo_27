@@ -2,7 +2,7 @@
   import { reactive } from 'vue';
 
   const estado = reactive ({
-    filtro: '',
+    filtro: 'soma',
     n1: 0,
     n2: 0,
     resultado: 0,
@@ -39,9 +39,9 @@
     <div class="content">
       <h1>Calculadora aritmética</h1>
       <label>Primeiro numero</label>
-      <input type="number" v-model="estado.n1">
+      <input @input="operacoes" type="number" v-model="estado.n1">
       <label>Segundo numero</label>
-      <input type="number" v-model="estado.n2">
+      <input @input="operacoes" type="number" v-model="estado.n2">
       <label>Declare a operaçao: </label>
       <select v-model="estado.filtro" @change="operacoes" class="arit">
         <option value="soma">Somar</option>
